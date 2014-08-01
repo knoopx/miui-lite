@@ -1,0 +1,54 @@
+ui_print("Mounting partitions");
+run_program("/sbin/busybox", "mount", "/system");
+
+ui_print("Copying system files");
+package_extract_dir("system", "/system");
+
+ui_print("Removing apps");
+delete("/data/app/com.google.android.voicesearch-1.apk");
+delete("/data/app/com.miui.transfer-1.apk");
+delete("/data/app/com.xiaomi.android.apps.authenticator2-1.apk");
+delete("/data/app/com.xiaomi.miclick-1.apk");
+delete("/system/app/BasicDreams.apk");
+delete("/system/app/Browser.apk");
+delete("/system/app/BugReport.apk");
+delete("/system/app/Calculator.apk");
+delete("/system/app/Camera2.apk");
+delete("/system/app/CloudService.apk");
+delete("/system/app/Email.apk");
+delete("/system/app/FileExplorer.apk");
+delete("/system/app/Galaxy4.apk");
+delete("/system/app/HoloSpiralWallpaper.apk");
+delete("/system/app/HTMLViewer.apk");
+delete("/system/app/LiveWallpapers.apk");
+delete("/system/app/LiveWallpapersPicker.apk");
+delete("/system/app/MagicSmokeWallpapers.apk");
+delete("/system/app/MiLinkService.apk");
+delete("/system/app/Mipay.apk");
+delete("/system/app/MiuiCompass.apk");
+delete("/system/app/MiuiVideo.apk");
+delete("/system/app/MiWallpaper.apk");
+delete("/system/app/NoiseField.apk");
+delete("/system/app/Notes.apk");
+delete("/system/app/PaymentService.apk");
+delete("/system/app/PhaseBeam.apk");
+delete("/system/app/PhotoTable.apk");
+delete("/system/app/PrintSpooler.apk");
+delete("/system/app/VideoEditor.apk");
+delete("/system/app/VisualizationWallpapers.apk");
+delete("/system/app/XiaomiServiceFramework.apk");
+delete("/system/priv-app/BarcodeScanner.apk");
+delete("/system/priv-app/Browser.apk");
+delete("/system/priv-app/Calendar.apk");
+delete("/system/priv-app/MiuiGallery.apk");
+delete("/system/priv-app/Music.apk");
+delete("/system/priv-app/QuickSearchBox.apk");
+delete("/system/priv-app/talkback.apk");
+delete("/system/priv-app/Weather.apk");
+delete("/system/priv-app/WeatherProvider.apk");
+delete("/system/priv-app/YellowPage.apk");
+
+ui_print("Unmounting partitions");
+unmount("/system");
+
+ui_print("Done");
